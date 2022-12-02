@@ -1,0 +1,5 @@
+# Ignore AoC `input.txt` files.
+input.txt
+
+# Ignore macOS system files.
+.DS_Store
