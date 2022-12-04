@@ -2,48 +2,29 @@
 
 
 import os
+from string import ascii_lowercase, ascii_uppercase
 
 
-def character_to_int(character: str) -> int:
-    unicode_number: int = ord(character) - 96
-    # The character is uppercase.
-    if unicode_number < 0:
-        return ord(character.lower()) - 96 + ord('z') - 96
-    # The character is lowercase.
-    return unicode_number
+def priority(character: str) -> int:
+    return (ascii_lowercase + ascii_uppercase).index(character) + 1
 
 
 def part1(data: list[str]) -> int:
     count: int = 0
     for rucksack in data:
-        compartment1: str = rucksack[: len(rucksack) // 2]
-        compartment2: str = rucksack[len(rucksack) // 2 :]
-
-        dictionary = dict.fromkeys(compartment1, 0)
-        for character in compartment2:
-
-            if character in dictionary:
-                dictionary[character] += 1
-
-                # If the dictionary value is not zero.
-                if dictionary[character]:
-                    count += character_to_int(character=character)
-                    dictionary.clear()  # Clear the dictionary before restarting the loop.
+        midpoint: int = len(rucksack) // 2
+        compartment1, compartment2 = rucksack[:midpoint], rucksack[midpoint:]
+        common: str = (set(compartment1) & set(compartment2)).pop()
+        count += priority(common)
     return count
 
 
 def part2(data: list[str]) -> int:
-    nested_data: list[list[str]] = [data[i : i + 3] for i in range(0, len(data), 3)]
-
     count: int = 0
-    for group in nested_data:
-        dictionary = dict.fromkeys([item for rucksack in group for item in rucksack], 0)
-
-        for rucksack in group:
-            for item in ''.join(set(rucksack)):
-                dictionary[item] += 1
-                if dictionary[item] == 3:
-                    count += character_to_int(item)
+    while data:
+        r1, r2, r3 = [data.pop(0) for _ in range(3)]
+        common: str = (set(r1) & set(r2) & set(r3)).pop()
+        count += priority(common)
     return count
 
 
