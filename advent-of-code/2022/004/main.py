@@ -20,10 +20,8 @@ def part1(data: list[ElfPair]) -> int:
     count: int = 0
     for pair in data:
         elf1, elf2 = pair.elf1, pair.elf2
-
         if elf1.start <= elf2.start and elf1.end >= elf2.end:
             count += 1
-
         elif elf2.start <= elf1.start and elf2.end >= elf1.end:
             count += 1
     return count
@@ -33,7 +31,6 @@ def part2(data: list[ElfPair]) -> int:
     count: int = 0
     for pair in data:
         elf1, elf2 = pair.elf1, pair.elf2
-
         if elf1.start <= elf2.start <= elf1.end or elf2.start <= elf1.start <= elf2.end:
             count += 1
     return count
