@@ -9,6 +9,18 @@ STACKS = [
     ['P'],
 ]
 
+# STACKS = [
+#     ['W', 'B', 'D', 'N', 'C', 'F', 'J'],
+#     ['P', 'Z', 'V', 'Q', 'L', 'S', 'T'],
+#     ['P', 'Z', 'B', 'G', 'J', 'T'],
+#     ['D', 'T', 'L', 'J', 'Z', 'B', 'H', 'C'],
+#     ['G', 'V', 'B', 'J', 'S'],
+#     ['P', 'S', 'Q'],
+#     ['B', 'V', 'D', 'F', 'L', 'M', 'P', 'N'],
+#     ['P', 'S', 'M', 'F', 'B', 'D', 'L', 'R'],
+#     ['V', 'D', 'T', 'R'],
+# ]
+
 
 def main() -> int:
     DIRECTORY: str = os.path.dirname(__file__)
