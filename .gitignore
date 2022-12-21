@@ -1,5 +1,8 @@
 # Ignore AoC `input.txt` files.
 input.txt
 
+# Ignore AoC API data.
+advent-of-code/utils/data/
+
 # Ignore macOS system files.
 .DS_Store
