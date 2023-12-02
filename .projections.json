@@ -1,0 +1,5 @@
+{
+  "*.go": {
+    "dispatch": "go run % < %:h:h/data/input.txt"
+  }
+}
