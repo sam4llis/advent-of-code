@@ -1,5 +1,6 @@
 # Ignore AoC `input.txt` files.
 input.txt
+test.txt
 
 # Ignore AoC API data.
 advent-of-code/utils/data/
