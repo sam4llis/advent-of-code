@@ -14,7 +14,7 @@ import (
 func part1(input io.Reader) int {
 	rx := regexp.MustCompile(`\d`)
 
-	scanner := bufio.NewScanner(os.Stdin)
+	scanner := bufio.NewScanner(input)
 	sum := 0
 
 	for scanner.Scan() {
@@ -50,7 +50,7 @@ func part2(input io.Reader) int {
 		"nine", "n9e",
 	)
 
-	scanner := bufio.NewScanner(os.Stdin)
+	scanner := bufio.NewScanner(input)
 	sum := 0
 
 	for scanner.Scan() {
